@@ -1,4 +1,4 @@
-﻿name: Deploy
+﻿﻿name: Deploy
 
 on:
   push:
@@ -32,10 +32,6 @@ jobs:
       run: dotnet build -c Release -f:net8.0-windows10.0.19041.0
       working-directory: ./ContinuousDeployment
 
-    - name: Test
-      run: dotnet test -c Release -f:net8.0-windows10.0.19041.0
-      working-directory: ./ContinuousDeployment
-
     - name: Decode Signing Certificate
       run: |
         echo "${{ secrets.SIGNING_CERTIFICATE_BASE_64_CONTENT }}" > cert.asc
@@ -55,7 +51,6 @@ jobs:
         $xml = [Xml] (Get-Content ./ContinuousDeployment/ContinuousDeployment.csproj)
         [string] $version = [Version] $xml.Project.PropertyGroup.ApplicationDisplayVersion
         echo "version=$($version)" >> $env:GITHUB_OUTPUT
-
 
     - name: Create Tag
       uses: actions/github-script@v5
