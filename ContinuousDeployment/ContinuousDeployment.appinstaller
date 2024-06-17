@@ -1,0 +1,7 @@
+﻿﻿<?xml version="1.0" encoding="utf-8"?>
+<AppInstaller xmlns="http://schemas.microsoft.com/appx/appinstaller/2018" Version="1.0.0.0" Uri="https://github.com/Dev-Shaggy/ContinuousDeployment/releases/latest/download/ContinuousDeployment.appinstaller">
+  <MainPackage Name="dev-shaggy.continuousdeployment" Publisher="CN=Dev-Shaggy" Version="1.3.0.0" ProcessorArchitecture="x64" Uri="https://github.com/Dev-Shaggy/ContinuousDeployment/releases/latest/download/AutoUpdate.msix" />
+  <UpdateSettings>
+    <OnLaunch HoursBetweenUpdateChecks="0" />
+  </UpdateSettings>
+</AppInstaller>
